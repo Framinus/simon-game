@@ -46,12 +46,12 @@ $(document).ready(function() {
   let strict = false;
   let turns = 0;
   let step = 0;
+  let playerTurn = false;
   let sequence = [];
 
   // dom manipulation
   const victoryDOM = () => {
     victory.play();
-    $('#counter').html('WIN!');
     setTimeout(reset, 5000);
   }
 
@@ -65,8 +65,7 @@ $(document).ready(function() {
   // dom manipulation
   const wrongAnswerStrict = () => {
     wrong.play();
-    $('#counter').html("--");
-    simon.reset();
+    reset();
   }
 
   // model
@@ -116,8 +115,11 @@ $(document).ready(function() {
     $("#counter").html("--");
   }
 
+  // if the game hasn't been won, add a new color to the sequence array, increment the turn marker, and then call playSequence to change the DOM.
   const nextSequence = () => {
-    if (checkForWin() === true) {
+    playerTurn = false;
+    if (checkForWin()) {
+      turns = 'YOU WIN!';
       return;
     } else {
       let nextColor = colors[Math.floor (Math.random() * 4)].colorId;
@@ -137,15 +139,16 @@ $(document).ready(function() {
     }
   }
 
+  // makes the sounds and lights go!
   const lightAndSound = (index, timer) => {
     const interval = setTimeout(() => {
       soundFiles[index].play();
       colors[index].dom.fadeOut(300);
       colors[index].dom.fadeIn(300);
       }, timer);
+      playerTurn = true;
   }
 
-// our interactive jquery that allows player to click buttons to select colors.
 
   // these pass the color clicked to the sequence to check it, as well as playing the sound and making the button fadeOut and fadeIn.
    $("#green").click(() => {
@@ -187,8 +190,6 @@ $(document).ready(function() {
   // starts a game when the start button is clicked.
     $("#start").click(() => {
       reset();
-      game = true;
-      $('#switch').css("background-color", "orange");
       startupSound.play();
       nextSequence();
     });
@@ -197,10 +198,10 @@ $(document).ready(function() {
     $("#strict").click(() => {
       if (!strict) {
       strict = true;
-      $('#strict').css("background-color", "red");
+      $('#strict').css("background-color", "#EECBF2");
       } else {
         strict = false;
-        $('#strict').css("background-color", "yellow");
+        $('#strict').css("background-color", "white");
       }
     });
 });
