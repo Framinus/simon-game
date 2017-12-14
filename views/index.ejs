@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Simon Game</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./frontend/script.js"></script>
+  </head>
+  <body>
+    <div class="simonboard">
+      <div id="outer">
+        <div id="green"></div>
+        <div id="red"></div>
+        <div id="yellow"></div>
+        <div id="blue"></div>
+      </div>
+
+      <div id="console">
+        <h2>SIMON</h2>
+        <div id="counter"></div>
+        <div id="start"></div>
+        <div id="strict"></div>
+        <div id="consoleText">
+          <p id="countText">count</p>
+          <p id="startText">start</p>
+          <p id="strictText">strict</p>
+        </div>
+        <div id="switch"></div>
+      </div>
+    </div>
+
+    <audio id="sound1" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg"></audio>
+    <audio id="sound2" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mpeg"></audio>
+    <audio id="sound3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mpeg"></audio>
+    <audio id="sound4" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mpeg"></audio>
+    <audio id="startupSound" src="http://res.cloudinary.com/framinus/video/upload/v1500938067/126421__cabeeno-rossley__level-complete_sne0ke.wav" type="audio/wav"></audio>
+    <audio id="wrong" src="http://res.cloudinary.com/framinus/video/upload/v1500954660/126420__cabeeno-rossley__game-noises-1_s4pxpq.wav" type="audio/wav"></audio>
+    <audio id="victory" src="http://res.cloudinary.com/framinus/video/upload/v1500963279/242207__wagna__fanfare_qu9a5d.mp3" type="audio/mpeg"></audio>
+  </body>
+</html>
