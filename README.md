@@ -1,5 +1,7 @@
 # Patterns
 
+Play this game live at https://patterns-memory-game.herokuapp.com/
+
 This is a memory game inspired by Simon, but with a more soothing color palette. Play on regular mode, where a wrong answer allows you to try the sequence again, or strict mode, where one wrong move sends you back to start! This app is built in Node and Express, with a significant amount of front end logic. It taught me a great deal about timing events in JavaScript!
 
 ### Developed features:
