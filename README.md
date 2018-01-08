@@ -14,5 +14,5 @@ This is a memory game inspired by Simon, but with a more soothing color palette.
 If you want to dig into this code yourself:
 
 - Fork and clone the repository.
-- Run NPM install to get the required packages.
+- Run ```npm install``` to get the required packages.
 - Run ```npm start``` to start the server.
