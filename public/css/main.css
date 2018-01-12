@@ -102,12 +102,13 @@ button {
   background-color: #000;
   border-radius: 10px;
   color: #fff;
-  font-size: 20px;
+  font-size: 20px !important;
   height: 40px;
   margin: 5px;
   padding-right: 5px;
   padding-top: 5px;
   text-align: right;
+  vertical-align: middle;
   width: 100px;
 }
 
