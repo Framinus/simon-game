@@ -106,7 +106,7 @@ $(document).ready(function() {
     return;
   }
 
-  // model and dom manipulation - will refactor.
+  // model and dom manipulation
   const reset = () => {
     game = true;
     sequence = [];
@@ -149,42 +149,31 @@ $(document).ready(function() {
       playerTurn = true;
   }
 
+  // generic click function that takes in the dom node, a color, and a sound.
 
-  // these pass the color clicked to the sequence to check it, as well as playing the sound and making the button fadeOut and fadeIn.
-   $("#green").click(() => {
-     if (game) {
-     humanColor(green.colorId);
-     sound1.play();
-     $('#green').fadeOut(200);
-     $('#green').fadeIn(200);
+  const pressColorButton = (domColor, colorId, sound) => {
+    if (game) {
+      humanColor(colorId);
+      sound.play();
+      domColor.fadeOut(200);
+      domColor.fadeIn(200);
     }
-   });
+  }
+
+    $("#green").click(() => {
+      pressColorButton(green.dom, green.colorId, green.sound);
+    })
 
     $("#red").click(() => {
-      if (game) {
-      humanColor(red.colorId);
-      sound2.play();
-      $('#red').fadeOut(200);
-      $('#red').fadeIn(200);
-    }
+      pressColorButton(red.dom, red.colorId, red.sound);
    });
 
     $("#yellow").click(() => {
-      if (game) {
-      humanColor(yellow.colorId);
-      sound3.play();
-      $('#yellow').fadeOut(200);
-      $('#yellow').fadeIn(200);
-      }
+      pressColorButton(yellow.dom, yellow.colorId, yellow.sound);
     });
 
     $("#blue").click(() => {
-      if (game) {
-      humanColor(blue.colorId);
-      sound4.play();
-      $('#blue').fadeOut(200);
-      $('#blue').fadeIn(200);
-      }
+      pressColorButton(blue.dom, blue.colorId, blue.sound);
     });
 
   // starts a game when the start button is clicked.
